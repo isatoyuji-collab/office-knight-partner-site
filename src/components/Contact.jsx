@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import { faqs } from "../data";
 
-function makeInitialForm(category) {
+function makeInitialForm(category, plan) {
   return {
     company: "",
     name: "",
     email: "",
     category,
-    message: "",
+    message: plan ? `「${plan}」への申し込みを希望します。` : "",
   };
 }
 
 export default function Contact({ defaultCategory = "企業・団体" }) {
-  const initialForm = makeInitialForm(defaultCategory);
+  const [searchParams] = useSearchParams();
+  const plan = searchParams.get("plan");
+  const initialForm = makeInitialForm(defaultCategory, plan);
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("idle"); // idle | sending | done | error
 
@@ -26,6 +29,7 @@ export default function Contact({ defaultCategory = "企業・団体" }) {
     setStatus("sending");
 
     if (!supabase) {
+      // Supabase未接続の場合はここでAPI連携先を差し替えてください
       console.warn("Supabase未設定：.envにVITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEYを設定してください");
       setStatus("done");
       return;

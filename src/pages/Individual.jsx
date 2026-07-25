@@ -2,8 +2,7 @@ import Hero from "../components/Hero";
 import AboutBrief from "../components/AboutBrief";
 import DevStatus from "../components/DevStatus";
 import FundUse from "../components/FundUse";
-import SupportMethod from "../components/SupportMethod";
-import Contact from "../components/Contact";
+import SupportCTA from "../components/SupportCTA";
 import Footer from "../components/Footer";
 
 export default function Individual() {
@@ -17,8 +16,7 @@ export default function Individual() {
       <AboutBrief />
       <DevStatus />
       <FundUse />
-      <SupportMethod />
-      <Contact defaultCategory="個人" />
+      <SupportCTA />
       <Footer />
     </div>
   );
