@@ -12,7 +12,7 @@ function makeInitialForm(category) {
   };
 }
 
-export default function Contact({ defaultCategory = "企業" }) {
+export default function Contact({ defaultCategory = "企業・団体" }) {
   const initialForm = makeInitialForm(defaultCategory);
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("idle"); // idle | sending | done | error
@@ -26,7 +26,6 @@ export default function Contact({ defaultCategory = "企業" }) {
     setStatus("sending");
 
     if (!supabase) {
-      // Supabase未接続の場合はここでAPI連携先を差し替えてください
       console.warn("Supabase未設定：.envにVITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEYを設定してください");
       setStatus("done");
       return;
@@ -74,7 +73,7 @@ export default function Contact({ defaultCategory = "企業" }) {
                 onChange={handleChange}
                 className="w-full border border-line px-4 py-3 bg-paper text-ink focus:outline-none focus:border-gold"
               >
-                <option>企業</option>
+                <option>企業・団体</option>
                 <option>個人</option>
                 <option>取材</option>
                 <option>その他</option>

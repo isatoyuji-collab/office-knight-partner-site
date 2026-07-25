@@ -1,8 +1,11 @@
 import Hero from "../components/Hero";
-import AboutBrief from "../components/AboutBrief";
-import VisionMission from "../components/VisionMission";
-import CoCreation from "../components/CoCreation";
-import Results from "../components/Results";
+import CompanyAbout from "../components/CompanyAbout";
+import WhyPartner from "../components/WhyPartner";
+import CompanyValues from "../components/CompanyValues";
+import Projects from "../components/Projects";
+import Partnership from "../components/Partnership";
+import Merits from "../components/Merits";
+import Roadmap from "../components/Roadmap";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -10,15 +13,19 @@ export default function Company() {
   return (
     <div className="font-sans">
       <Hero
-        eyebrow="FOR COMPANY"
-        lines={["関西のライブエンタメを", "次のステージへ。"]}
-        lead="協賛・技術協力・開発パートナーなど、様々な形でoffice Knightと共創していただけます。"
+        eyebrow="FOR COMPANY / ORGANIZATION"
+        lines={["共に、関西のエンタメの", "未来を創る。"]}
+        lead="office Knightは、舞台・イベント・テクノロジー・共創を通じて、エンタメに挑戦する人を支えるプロジェクトです。私たちは、この挑戦をともに育てる企業・団体パートナーを募集しています。"
+        ctas={[{ href: "#contact", label: "お問い合わせ" }]}
       />
-      <AboutBrief />
-      <VisionMission />
-      <CoCreation />
-      <Results showFundNote />
-      <Contact defaultCategory="企業" />
+      <CompanyAbout />
+      <WhyPartner />
+      <CompanyValues />
+      <Projects />
+      <Partnership />
+      <Merits />
+      <Roadmap />
+      <Contact defaultCategory="企業・団体" />
       <Footer />
     </div>
   );

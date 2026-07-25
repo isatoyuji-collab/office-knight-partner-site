@@ -6,7 +6,10 @@ export default function AboutBrief() {
           ABOUT OFFICE KNIGHT
         </p>
         <p className="text-lg md:text-xl leading-relaxed font-light text-ink-soft">
-          office Knightは、演劇を軸に活動する劇団です。舞台の上でつくってきた「人を動かす力」「物語をつくる力」を、公演の外へと広げ、企業・地域と共創するプロジェクトを展開しています。
+          office Knightは、公演をつくるだけの団体でも、システムを開発する会社でもありません。私たちは、エンタメの現場で感じてきた課題を、企画・運営・テクノロジー・共創によって解決し、新しい挑戦が生まれ続ける環境をつくることを目指しています。
+        </p>
+        <p className="mt-6 text-lg md:text-xl leading-relaxed font-light text-ink-soft">
+          その中心にあるのが、「創る・支える・繋ぐ・発表する」という4つの価値です。
         </p>
       </div>
     </section>
